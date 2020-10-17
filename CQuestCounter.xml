@@ -1,0 +1,28 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+    <Frame name="CQCounterFrame" movable="false" parent="QuestScrollFrame">
+        <Size><AbsDimension x="75" y="25" /></Size>
+        <Layers>
+            <Layer level="OVERLAY">
+                <FontString name="$parentString" font="GameFontNormalLarge" text="Quests: X/25" parent="CQCounterFrame">
+                    <Color r="1" g=".8046" b="0" a="1"/>
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="QuestScrollFrame" relativePoint="TOPLEFT" x="2" y="22">
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Scripts>
+            <OnLoad>
+                CQCounterFrame:RegisterEvent("QUEST_LOG_UPDATE");
+                local _, k = C_QuestLog.GetNumQuestLogEntries();
+                CQCounterFrameString:SetText(QUESTS_COLON.." "..k.."/25");
+            </OnLoad>
+            <OnEvent>
+                local _, k = C_QuestLog.GetNumQuestLogEntries();
+                CQCounterFrameString:SetText(QUESTS_COLON.." "..k.."/25");
+            </OnEvent>
+        </Scripts>
+    </Frame>  
+</Ui>

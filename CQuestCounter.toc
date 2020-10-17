@@ -1,0 +1,6 @@
+## Interface: 90001
+## Title: CQuestCounter
+## Author: Centella of Medivh-US
+## Notes: Adds a counter for how many quests are in your log.|n|cFF00FF00Author: |rCentella of Medivh-US
+## Version: 1.4
+CQuestCounter.xml
