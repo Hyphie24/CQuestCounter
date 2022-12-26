@@ -4,10 +4,10 @@
         <Size><AbsDimension x="75" y="25" /></Size>
         <Layers>
             <Layer level="OVERLAY">
-                <FontString name="$parentString" font="GameFontNormalLarge" text="Quests: X/25" parent="CQCounterFrame">
+                <FontString name="$parentString" font="GameFontNormalLarge" text="Quests: X/35">
                     <Color r="1" g=".8046" b="0" a="1"/>
                     <Anchors>
-                        <Anchor point="TOPLEFT" relativeTo="QuestScrollFrame" relativePoint="TOPLEFT" x="2" y="22">
+                        <Anchor point="TOPLEFT" relativeTo="QuestScrollFrame" relativePoint="TOPLEFT" x="-120" y="-10">
                         </Anchor>
                     </Anchors>
                 </FontString>
@@ -17,11 +17,11 @@
             <OnLoad>
                 CQCounterFrame:RegisterEvent("QUEST_LOG_UPDATE");
                 local _, k = C_QuestLog.GetNumQuestLogEntries();
-                CQCounterFrameString:SetText(QUESTS_COLON.." "..k.."/25");
+                CQCounterFrameString:SetText(QUESTS_COLON.." "..k.."/35");
             </OnLoad>
             <OnEvent>
                 local _, k = C_QuestLog.GetNumQuestLogEntries();
-                CQCounterFrameString:SetText(QUESTS_COLON.." "..k.."/25");
+                CQCounterFrameString:SetText(QUESTS_COLON.." "..k.."/35");
             </OnEvent>
         </Scripts>
     </Frame>  
